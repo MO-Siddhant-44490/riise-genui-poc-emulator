@@ -110,5 +110,6 @@ The model never sees account data and never produces numbers. Start reading at
 
 ## Status of these scripts
 
-The Mac scripts were run on an Apple Silicon Mac. The Windows scripts are direct ports and have
-not been run on a Windows machine yet; please report anything that fails.
+The Mac scripts 02 to 05 and 99 were run end to end on an Apple Silicon Mac (17 Nov 2026); 01 was
+not re-run there because the emulator already existed. The Windows scripts are direct ports and
+have not been run on a Windows machine yet; please report anything that fails.

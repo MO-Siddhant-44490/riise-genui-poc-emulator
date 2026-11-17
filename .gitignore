@@ -6,3 +6,4 @@ genui.env
 .deploy/
 .DS_Store
 bedrock_key*.txt
+.download/
