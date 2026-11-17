@@ -1,0 +1,35 @@
+diff --git a/apps/super_app/lib/Investor/presentation/landingpage/landing_page_header/landingpage_header.dart b/apps/super_app/lib/Investor/presentation/landingpage/landing_page_header/landingpage_header.dart
+index 39a796fe..3af5691b 100644
+--- a/apps/super_app/lib/Investor/presentation/landingpage/landing_page_header/landingpage_header.dart
++++ b/apps/super_app/lib/Investor/presentation/landingpage/landing_page_header/landingpage_header.dart
+@@ -36,6 +36,7 @@ import 'package:trader_user_login_profile/rise_profile_setting/profile_setting_c
+ import 'package:trader_user_login_profile/rise_profile_setting/widgets/profileheader.dart';
+ import 'package:trader_user_login_profile/data/login/user_manager_impl.dart';
+ import 'package:mofsl_ui_library/mofsl_ui_library.dart';
++import 'package:mo_genui/mo_genui.dart'; // GENUI-POC (local only)
+ import 'package:mosl_security/prefs/rise_shared_preference.dart';
+ import 'package:pwm_core/core/app_typography.dart';
+ import 'package:pwm_core/core/theme_extension.dart';
+@@ -411,6 +412,9 @@ class _LandingPageHeaderState extends State<LandingPageHeader> {
+                     _apiPageList(context),
+                     MOSpacing.horizontalSpace12,
+                   ],
++                  // GENUI-POC (local only): AI view entry
++                  const GenUiEntryButton(),
++                  MOSpacing.horizontalSpace12,
+                   //Search CTA
+                   GestureDetector(
+                     onTap: () {
+diff --git a/apps/super_app/pubspec.yaml b/apps/super_app/pubspec.yaml
+index 162cef94..0e4b961b 100644
+--- a/apps/super_app/pubspec.yaml
++++ b/apps/super_app/pubspec.yaml
+@@ -12,6 +12,8 @@ dependencies:
+     path: ../../packages/mo_explore_fno
+   mo_day_zero:
+     path: ../../packages/mo_day_zero
++  mo_genui: # GENUI-POC (local only)
++    path: ../../packages/mo_genui
+   flutter:
+     sdk: flutter
+   flutter_sms_inbox: ^1.0.4

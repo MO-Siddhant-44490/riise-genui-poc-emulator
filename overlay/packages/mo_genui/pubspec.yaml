@@ -1,0 +1,98 @@
+name: mo_genui
+description: "GenUI proof of concept: AI view that turns questions into live widgets. Local POC only, not for release."
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: any
+  intl: any
+  fl_chart: any
+  fixnum: any
+  webview_flutter: any
+  dartz: any
+  trader_proto_gen: any
+  mo_portfolio:
+    path: ../mo_portfolio
+  mo_mutual_funds:
+    path: ../mo_mutual_funds
+  mo_portfolio_analysis:
+    path: ../mo_portfolio_analysis
+  mo_portfolio_2_0:
+    path: ../mo_portfolio_2_0
+  mo_get_quote:
+    path: ../mo_get_quote
+  mo_explore_stock_tab:
+    path: ../mo_explore_stock_tab
+  trader_search:
+    path: ../trader_search
+  trader_watchlist:
+    path: ../trader_watchlist
+  trader_orders:
+    path: ../trader_orders
+  trader_core:
+    path: ../trader_core
+  trader_trading_core:
+    path: ../trader_trading_core
+  trader_add_fund:
+    path: ../trader_add_fund
+  trader_extensions:
+    path: ../trader_extensions
+  mosl_security:
+    path: ../mosl_security
+  trader_index_options:
+    path: ../trader_index_options
+  mo_research:
+    path: ../mo_research
+  mo_research_assistant:
+    path: ../mo_research_assistant
+  url_launcher: any
+  shared_preferences: any
+  flutter_markdown_plus: any
+  mo_option_chain:
+    path: ../mo_option_chain
+  mo_explore_fno:
+    path: ../mo_explore_fno
+  mo_mtf_hub:
+    path: ../mo_mtf_hub
+  mo_report:
+    path: ../mo_report
+  mo_stock_basket:
+    path: ../mo_stock_basket
+  mo_stock_sip:
+    path: ../mo_stock_sip
+  trader_notifications:
+    path: ../trader_notifications
+  trader_user_login_profile:
+    path: ../trader_user_login_profile
+  trader_report_news:
+    path: ../trader_report_news
+  trader_network:
+    path: ../trader_network
+  mosl_interactive:
+    git:
+      url: https://github.com/mofsl-flutter/mosl_interactive.git
+      ref: develop/sprint_18_release
+  mosl_socket_core:
+    git:
+      url: https://github.com/mofsl-flutter/mosl_socket_core.git
+      ref: develop/sprint_18_release
+  mosl_broadcaster:
+    git:
+      url: https://github.com/mofsl-flutter/mosl_broadcaster.git
+      ref: develop/sprint_18_release
+  mofsl_ui_library:
+    git:
+      url: https://github.com/mofsl-flutter/mofsl-ui-library.git
+      ref: develop/sprint_18_release
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

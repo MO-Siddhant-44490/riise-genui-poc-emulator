@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GENUI-POC (local only, untracked): manifest overlay for the uat flavour.
+     Google Play Protect blocks sideloaded apps that request READ_SMS / RECEIVE_SMS ("App blocked to
+     protect your device"), so the internal GenUI test build drops them. OTP must be typed by hand.
+     SEND_SMS is kept (SIM binding). Delete this file to restore the stock uat manifest. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.READ_SMS" tools:node="remove" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" tools:node="remove" />
+</manifest>

@@ -1,0 +1,8 @@
+# Local settings with the router token. Never commit.
+genui.env
+*.apk
+*.jks
+*.keystore
+.deploy/
+.DS_Store
+bedrock_key*.txt
