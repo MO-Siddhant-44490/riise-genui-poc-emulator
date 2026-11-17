@@ -8,12 +8,15 @@ six-line host patch, one manifest overlay) and setup scripts. It does **not** co
 app source: you get that from the company CodeCommit repo with your own access. Do not make this
 repo public, and do not commit or push the overlay into the company repo.
 
+**Using Claude Code?** Open this folder in Claude Code and say "set this up". [`CLAUDE.md`](CLAUDE.md)
+tells it what to run and what to check.
+
 ## Which path?
 
 | | Path A: prebuilt APK | Path B: build from source |
 |---|---|---|
 | Use it to | see the POC working | read, change and rebuild the code |
-| Needs | Android Studio | Android Studio, Flutter 3.44.4, JDK 17, company repo access |
+| Needs | Android SDK tools (script installs them) | plus Flutter 3.44.4, JDK 17, company repo access |
 | Time | about 15 minutes | about an hour the first time |
 
 Both paths need the laptop to be on a network that the UAT API gateway allows (office network or
@@ -25,8 +28,10 @@ Log in with your own UAT client code. Orders placed from the AI view are real UA
 
 ## Common setup (both paths)
 
-1. Install [Android Studio](https://developer.android.com/studio). In **SDK Manager > SDK Tools**
-   tick **Android SDK Command-line Tools (latest)**.
+1. Either install [Android Studio](https://developer.android.com/studio) and in **SDK Manager >
+   SDK Tools** tick **Android SDK Command-line Tools (latest)**, or skip Android Studio and run
+   `00_install_prereqs` (`bash scripts/mac/00_install_prereqs.sh` / `.\scripts\windows\00_install_prereqs.ps1`),
+   which installs JDK 17, the Android command-line tools and the GitHub CLI.
 2. Clone this repo (`gh repo clone MO-Siddhant-44490/riise-genui-poc-emulator`) and open a terminal in it.
 3. Create and start the emulator (Pixel 7, Android 13):
 
@@ -110,6 +115,6 @@ The model never sees account data and never produces numbers. Start reading at
 
 ## Status of these scripts
 
-The Mac scripts 02 to 05 and 99 were run end to end on an Apple Silicon Mac (17 Nov 2026); 01 was
-not re-run there because the emulator already existed. The Windows scripts are direct ports and
+The Mac scripts 02 to 05 and 99 were run end to end on an Apple Silicon Mac (17 Nov 2026); 00 and
+01 were only partly exercised there because the tools and emulator already existed. The Windows scripts are direct ports and
 have not been run on a Windows machine yet; please report anything that fails.
