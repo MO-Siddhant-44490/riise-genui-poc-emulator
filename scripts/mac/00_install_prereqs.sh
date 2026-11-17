@@ -3,7 +3,8 @@
 # tools and the GitHub CLI, through Homebrew. Skips anything already present. Run once.
 set -eu
 command -v brew >/dev/null || { echo "Homebrew is required: https://brew.sh (install it, then re-run)"; exit 1; }
-/usr/libexec/java_home -v 17+ >/dev/null 2>&1 || brew install --cask temurin@17
+# openjdk@17 is a plain formula: no admin password needed. common.sh puts it on PATH for the scripts.
+command -v java >/dev/null 2>&1 || /usr/libexec/java_home -v 17+ >/dev/null 2>&1 || brew install openjdk@17
 command -v gh >/dev/null || brew install gh
 if [ ! -d "${ANDROID_HOME:-$HOME/Library/Android/sdk}/cmdline-tools/latest" ] && [ ! -d "$(brew --prefix)/share/android-commandlinetools/cmdline-tools/latest" ]; then
   brew install --cask android-commandlinetools

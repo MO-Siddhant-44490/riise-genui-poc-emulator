@@ -6,6 +6,10 @@ SDK=${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/Library/Android/sdk}}
 # No Android Studio: fall back to the Homebrew command-line tools location (00_install_prereqs.sh).
 if [ ! -d "$SDK" ] && command -v brew >/dev/null && [ -d "$(brew --prefix)/share/android-commandlinetools" ]; then SDK="$(brew --prefix)/share/android-commandlinetools"; fi
 export ANDROID_HOME="$SDK" ANDROID_SDK_ROOT="$SDK"
+# Java for sdkmanager/avdmanager: use Homebrew's openjdk@17 when no java is on PATH.
+if ! command -v java >/dev/null 2>&1 && command -v brew >/dev/null && [ -d "$(brew --prefix)/opt/openjdk@17" ]; then
+  export JAVA_HOME="$(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"; export PATH="$JAVA_HOME/bin:$PATH"
+fi
 [ -d "$SDK" ] || { echo "Android SDK not found at $SDK. Run scripts/mac/00_install_prereqs.sh, or install Android Studio, or set ANDROID_HOME."; exit 1; }
 export PATH="$SDK/platform-tools:$SDK/emulator:$SDK/cmdline-tools/latest/bin:$PATH"
 HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
